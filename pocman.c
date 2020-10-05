@@ -4,16 +4,16 @@ int main ( void )
 {
 int sx , sy , dx , dy;
 int diff_x , diff_y ;
-sx = 2;
-sy = 5;
+sx = 4;
+sy = 1;
 dx = 3;
-dy = 7;
+dy = 5;
 diff_x = dx - sx;
 diff_y = dy - sy;
 if ( diff_x >0 && diff_y > 0)
 {
-printf ("R ") ;
-Go( diff_x ) ;
+printf ("R R R ") ;
+Go( diff_y ) ;
 printf ("R ") ;
 }
 if ( diff_x >0 && diff_y < 0)
@@ -21,7 +21,7 @@ if ( diff_x >0 && diff_y < 0)
 printf ("R ") ;
 Go( diff_x ) ;
 printf ("L ") ;
-Go( - diff_y ) ;
+Go( - diff_x ) ;
 }
 if ( diff_x <0 && diff_y > 0)
 {
