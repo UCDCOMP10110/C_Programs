@@ -1,4 +1,6 @@
 //rock, paper & scissors -
+#include <stdio.h>
+#include <stdlib.h>
 //declaring constant variables
 #define ROCK  1      
 #define PAPER  2
