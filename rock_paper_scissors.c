@@ -22,7 +22,7 @@ int main(void)
    srand(seed);
 
 
-   for (i = 0; i<=10; i++)
+   for (i = 0; i< 10; i++)
     {
         randNum = rand()%3+1;
         printf("Please choose 1 for ROCK,2 for SCISSORS OR 3 for PAPER.\n");
