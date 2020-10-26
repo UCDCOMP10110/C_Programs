@@ -1,95 +1,83 @@
 //rock, paper & scissors -
-#include <stdio.h>
-#include <stdlib.h>
-#define ROCK 1
-#define SCISSOR 2
-#define PAPER 3
+//declaring constant variables
+#define ROCK  1      
+#define PAPER  2
+#define SCISSOR 3
 
-
-int main(void)
-{
-   int i;
-   int randNum;
-   int seed;
-   int Pscore = 0;
-   int Cscore = 0;
-   int choice;
-
-   printf("Enter a seed for the random number generator.\n");
-   scanf("%d", &seed);
-
-
+//the main function
+int main() {
+   int random_Number , seed , User_choice , Player_Score = 0 , Computer_Score = 0;//declaring all the variables
+  
+   //asking the user input
+   printf("Enter a seed for the random number genertor.\n"); // entering the seed for the program
+   scanf("%d",&seed );
    srand(seed);
 
+   //making a loop that goes 10 times
+      for (int i = 0; i < 10; i++) {
+          //assigning a variable with the randum number generater
+          random_Number = rand()%3+1; // limiting the output for the genertor to be between 1 - 3
 
-   for (i = 0; i< 10; i++)
-    {
-        randNum = rand()%3+1;
-        printf("Please choose 1 for ROCK,2 for SCISSORS OR 3 for PAPER.\n");
-        scanf("%d", &choice);
-        if (choice == ROCK && randNum == PAPER){
+         //asking the user to choose and saving their coice in choic variable
+          printf("please choice 1 rock for 2 for scissors and 3 for paper\n");
+          scanf("%d", &User_choice); // demands a input from the user to either pick rock paper or scissors
+          //continue it when its wrong 
+          while (User_choice <=0 || User_choice > 3 ) {
+            printf("invalid input\n");
+            printf("please choice 1 rock for 2 for scissors and 3 for paper\n");
+            scanf("%d", &User_choice);
+          }
+
+          //making the conditions for what they choose also counting the time they won
+
+      if (User_choice == ROCK && random_Number == PAPER){
                 printf("User choice is ROCK.\n");
                 printf("Computer choice is PAPER.\n");
                 printf("Computer wins because PAPER beats ROCK.\n");
-                Cscore = Cscore + 1;
-
-         }else if(choice == ROCK && randNum == SCISSOR){
+                Computer_Score ++;
+         }else if(User_choice == ROCK && random_Number == SCISSOR){
                  printf("User choice is ROCK.\n");
                  printf("Computer choice is SCISSORS.\n");
                  printf("User wins because ROCK beats SCISSORS.\n");
-                 Pscore = Pscore + 1;
-
-         }else if(choice == ROCK && randNum == ROCK){
+                 Player_Score ++;
+         }else if(User_choice == ROCK && random_Number == ROCK){
                  printf("User choice is ROCK.\n");
                  printf("Computer choice is ROCK.\n");
                  printf("It's a draw. Computer chose ROCK and User also chose ROCK.\n");
-
-         }else if(choice == PAPER && randNum == SCISSOR){
+         }else if(User_choice == PAPER && random_Number == SCISSOR){
                  printf("User choice is PAPER.\n");
                  printf("Computer choice is SCISSORS.\n");
                  printf("Computer wins because SCISSORS beats PAPER.\n");
-                 Cscore = Cscore + 1;
-
-         }else if(choice == PAPER && randNum == ROCK){
+                 Computer_Score ++;
+         }else if(User_choice == PAPER && random_Number == ROCK){
                  printf("User choice is PAPER.\n");
                  printf("Computer choice is ROCK.\n");
                  printf("User wins because PAPER beats ROCK.\n");
-                 Pscore = Pscore + 1;
-
-         }else if(choice == PAPER && randNum == PAPER){
+                 Player_Score ++;
+         }else if(User_choice == PAPER && random_Number == PAPER){
                  printf("User choice is PAPER.\n");
                  printf("Computer choice is PAPER.\n");
                  printf("It's a draw. Computer chose PAPER and User also chose PAPER.\n");
-
-         }else if(choice == SCISSOR && randNum == ROCK){
+         }else if(User_choice == SCISSOR && random_Number == ROCK){
                  printf("User choice is SCISSORS.\n");
                  printf("Computer choice is ROCK.\n");
                  printf("Computer wins because ROCK beats SCISSORS.\n");
-                 Cscore = Cscore + 1;
-
-         }else if(choice == SCISSOR && randNum == PAPER){
+                 Computer_Score ++;
+         }else if(User_choice == SCISSOR && random_Number == PAPER){
                  printf("User choice is SCISSORS.\n");
                  printf("Computer choice is PAPER.\n");
                  printf("User wins because SCISSORS beats PAPER.\n");
-                 Pscore = Pscore + 1;
-
-         }else if(choice == SCISSOR && randNum == SCISSOR){
+                 Player_Score ++;
+         }else if(User_choice == SCISSOR && random_Number == SCISSOR){
                  printf("User choice is SCISSORS.\n");
                  printf("Computer choice is SCISSORS.\n");
-                 printf("It's a draw. Computer chose SCISSORS and User also chose SCISSORS.\n");
-
+                 printf("It's a draw. Computer chose SCISSOR and User also chose SCISSOR.\n");
          }else{
-                  printf("wrong answer\n");
-    }
-    }
-
-      if(Cscore < Pscore ){
-        printf("In 10 games, computer won %d times and user won %d time.\n", Pscore, Cscore);
-      }else if(Cscore > Pscore ){
-        printf("In 10 games, computer won %d times and user won %d time.\n", Cscore, Pscore);
-      }if(Cscore == Pscore ){
-        printf("No winner its a draw!\n");
+           printf("try again\n");
+         }
       }
-
-    return 0;
+   //showing the amount of time the computer or user won
+    printf("In 10 games, computer won %d times and user won %d times.\n", Computer_Score , Player_Score);
+ //ending the program
+  return 0;
 }
