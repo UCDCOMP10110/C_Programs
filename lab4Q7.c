@@ -2,20 +2,24 @@
 #include <math.h>
 
 int main(void){
-   double P, R, Y;
+   
+   // declaring variables
+   double P, R, Y; 
    double K = 12;
    double A, pick;
-
+   
+  //asking user too choose which one they want to compute and save it
    printf("Which value would you like to compute: 1) Amount 2) Principal 3) Rate 4) Number of years\n");
    printf("Select either 1, 2, 3 or 4.\n");
    scanf("%lf", &pick);
-
+   
+  //if they somthing else then the options will return invalide
    if( !(pick == 1 || pick == 2 || pick == 3 || pick == 4 )){
     printf("Invalid option.\n");
     return 0;
    }
 
-
+  //computings and printing the result out
     else if(pick == 1 ){
   printf("Please enter the principal:\n");
     scanf("%lf", &P);
@@ -117,6 +121,8 @@ int main(void){
     }
 
    }
-
+   
+   
+   //exit
    return 0;
 }
