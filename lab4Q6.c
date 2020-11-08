@@ -3,12 +3,12 @@
 
 
 int main(void){
-
+   // declaring variables 
     double P, R, Y;
 
     double A;
 
-
+   // getting input from the user
     printf("Please enter the amount:\n");
     scanf("%lf", &A);
     if( A < 0 ){
@@ -25,7 +25,7 @@ int main(void){
     if(!( 0 <= R && R <= 100)){
         printf("Invalid rate.");
         return 0;}
-
+    // computing and printin the result 
      else{
 
         Y = (log(pow((A/P),(1/12.0))))/(log(1+(R/(100*12.0))));
@@ -35,6 +35,6 @@ int main(void){
 
 
 
-
+    // exit
     return 0;
 }
