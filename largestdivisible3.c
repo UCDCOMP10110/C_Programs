@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdbool.h>
 #define MAX_SIZE 100
 int main(void) {
 
@@ -9,7 +8,6 @@ int main(void) {
     /* declare some extra variables as needed here */
     int max = 0;
     int index;
-    bool found = false;
     /* do not change this part of the program that reads in the
        array from the user */
     scanf("%d",&N);
