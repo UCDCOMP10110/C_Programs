@@ -24,11 +24,11 @@ int main(void)
   fclose(fp);
 
   /* write your solution here */
-  
+  //declaring variables
   int q=0,z=0,j,maxindx;
   double b[MAX_SIZE],max,tmp;
   
-
+//filtring all the numbers that are above the threshold 
    for(i = 0; i<N; i++)
    {
      if(a[i]<threshold)
@@ -44,13 +44,16 @@ int main(void)
    }
 
    
-
+   //if no value is below the threshold it prints out a statement and and stops 
    if(z < k)
    {
        printf("The array does not contain %d numbers less than %.5lf", k, threshold);
        return 0;
    }
-
+   
+    /* Run the outer loop k times, each time around the outer loop
+     the (j+1)st largest value is found and placed in position j
+     of the loop */
    for(j=0;j<k;j++)
    {
        max = a[j];
@@ -70,6 +73,7 @@ int main(void)
        a[maxindx] = tmp;
 
    }
+  //prints the largest value 
     printf("The k=%d largest value in the array that is less than %.5lf is %.5lf", k, threshold, a[k-1]);
 
 
