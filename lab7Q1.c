@@ -67,7 +67,7 @@ int main(void)
                maxindx = i;
            }
        }
-
+       // swap a[j] and a[minindx]
        tmp = a[j];
        a[j] = a[maxindx];
        a[maxindx] = tmp;
