@@ -14,7 +14,7 @@ int main(void)
     time(&now);
     printf("\n");
     printf("\t\t\t\t\t       %s", ctime(&now));
-    printf("\n\t\t\t\t\t===================*Welcome ya 3abd to ATM*=====================");
+    printf("\n\t\t\t\t\t===================*Welcome to opai elsheikh ATM*=====================");
 
     while(pin != enteredPin)
     {
@@ -57,7 +57,7 @@ int main(void)
         {
 
             balance -= amount;
-            printf("\n\t\tYou have withdraw %d Saudi Riyal . Your new balance is %.2f Saudi Riyal", amount,balance);
+            printf("\n\t\tYou have withdraw %d Saudi Riyal . Your new balance is %.2f euro", amount,balance);
             printf("\t\t\t\t\t============Thank you for banking with me============");
             amount = 1;
             break;
