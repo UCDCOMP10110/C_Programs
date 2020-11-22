@@ -23,12 +23,13 @@ int main(void)
     } while (N<3 || N>MAX_SIZE+2);
 
   /* write your solution here ... */
-    int i, j,p, isPrime;
+    int i, j, isPrime;
     L = 2;
     int temp = 2;
     a[0] = 2;
     a[1] = 3;
-
+    
+    //filtering the numbers
     for(i=0; i<N-2; i++)
 		a[i] = i+2;
 
