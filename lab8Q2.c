@@ -47,28 +47,35 @@ int main(void)
 
   /* Now all the input data has been read in 
      search for the required pair of lengths... */
-     
+     /*setting the start and end*/
      F = 0;
      S = n - 1;
+  
+     /*change x to the correct unit*/
      x *= 10000000;
 
-     
+    /*using the flag method*/
     int found = 0;
+   /*looping while first value is less then the second value in the array*/
      while(F<S)
      {
+       /*if the two sum that adds to the target value are found we print them out and we give the found(flage) a value of 1*/
        if(lengths[F] + lengths[S] == x) {
          printf("Found: %i + %i == %i\n", lengths[F], lengths[S], x);
          found = 1;
          return 1;
        }
+       /*if we didn't find the numbers we check if the value is less then the target if so we increament the first value to the next vlue of the array*/
        else if(lengths[F] + lengths[S] < x){
          F++;
        }
+       /*if its bigger we dis increament the value in the array to the ext lower value in the array*/
        else
        {
          S--;
        }
      }
+  /*if no value is found then we print this*/
      if(found == 0)
      {
         printf("No matching pair found"); 
