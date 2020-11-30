@@ -23,13 +23,13 @@ int main(void)
      //checking if the letter is a lower case if show change it with the postion in perm   
      if(msg[i] >= 'a' && msg[i] <='z')
      {
-       msg[i] = perm[msg[i] - 97];
+       msg[i] = perm[msg[i] - 'a'];
      }
      //checking if the letter is a upper case if show change it with the postion in perm
      else 
        if(msg[i] >= 'A' && msg[i] <='Z')
        {
-         msg[i] = perm[msg[i] - 65] - 32;
+         msg[i] = perm[msg[i] - 'A'] - 32;
        }
      i++;
    }
