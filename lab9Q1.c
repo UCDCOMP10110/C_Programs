@@ -29,7 +29,7 @@ int main(void)
      else 
        if(msg[i] >= 'A' && msg[i] <='Z')
        {
-         msg[i] = perm[msg[i] - 'A'] - 32;
+         msg[i] = perm[msg[i] - 'A'] - ('a' - 'A');
        }
      i++;
    }
